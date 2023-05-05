@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Header/>
         <Routes>
-          <Route path="/" element={<Home shows={shows} setShows={setShows} />}/>
+          <Route path="/Tvmaze/" element={<Home shows={shows} setShows={setShows} />}/>
           <Route path="/details/:id" element={<Details shows={shows} />} />
         </Routes>
       </Router>

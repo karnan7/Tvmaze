@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <Nav>
-       <Link to='/'><Logo src='https://static.tvmaze.com/images/tvm-header-logo.png'/></Link>
+       <Link to='/Tvmaze'><Logo src='https://static.tvmaze.com/images/tvm-header-logo.png'/></Link>
        <Login>Login</Login>
     </Nav>
   )
