@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import Shows from './Shows';
-import { Col, Row} from "reactstrap";
+import { Col} from "reactstrap";
 import { Link } from 'react-router-dom';
 
 const Home = ({shows, setShows}) => {
@@ -29,7 +29,7 @@ const Home = ({shows, setShows}) => {
     }
 
     useEffect(() => {
-        fetchDetails()
+        fetchDetails();
     },[])
 
   return (

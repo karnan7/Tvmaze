@@ -6,7 +6,7 @@ const Shows = ({shows}) => {
   return (
     <Content>
         <Wrap>
-            <img src={shows.picture}/>
+            <img src={shows.picture} alt={shows.name}/>
             <div>
                 <h1>{shows.name}</h1>
                 <h3><FaStar style={{color:'yellow'}}/>{shows.rating}</h3>

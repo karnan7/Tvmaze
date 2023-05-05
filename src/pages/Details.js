@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Booking from './Booking';
@@ -23,7 +23,7 @@ const Details = ({ shows }) => {
   return (
     <Container>
             <Background style={styles.bgStyle}>
-                <img src={selectedShow.picture}/>
+                <img src={selectedShow.picture} alt={selectedShow.name}/>
             </Background>
             <div style={styles.bgStyle}> 
                 <Title>{selectedShow.name}</Title>

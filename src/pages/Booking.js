@@ -2,17 +2,32 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 import { MdClose } from 'react-icons/md'
+import { toast } from 'react-hot-toast'
 
 const Booking = ({modalOpen, setModalOpen, shows}) => {
 
-    const [numTickets, setNumTickets] = useState(1);
+    const[name, setName] = useState("");
+    const[email, setEmail] = useState("");
+    const[phone, setPhone] = useState("");
+    const[numTickets, setNumTickets] = useState(1);
+    const[date, setDate] = useState("");
     
     const { id } = useParams();
     const selectedShow = shows.find((s) => s.id === parseInt(id));
 
     const handleSubmit=(e) => {
         e.preventDefault();
-        setModalOpen(false);
+        if(name && email && numTickets && date){
+            toast.success("Booking has been successful")
+            setModalOpen(false);
+            setName('');
+            setEmail('');
+            setPhone('');
+            setNumTickets(1);
+            setDate('')
+        }else{
+            toast.error("Enter your information")
+        }
     }
   return (
     
@@ -50,15 +65,23 @@ const Booking = ({modalOpen, setModalOpen, shows}) => {
             <input
             type='name'
             placeholder='Full Name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
             />
+
             <input
             type='email'
             placeholder='Email Address'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             />
+
             <input
             placeholder='Phone Number'
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             />
             <Selectors>
                 <Select value={numTickets} onChange={(e) => setNumTickets(parseInt(e.target.value))}>
@@ -69,10 +92,14 @@ const Booking = ({modalOpen, setModalOpen, shows}) => {
                     ))}
                 </Select>
 
-                <input type='date'/>
+                <input
+                 type='date'
+                 value={date}
+                onChange={(e) => setDate(e.target.value)}
+                 />
             </Selectors>
             <Controls>
-                <Submit htmlType="submit" onSubmit={handleSubmit}>Submit</Submit>
+                <Submit htmlType="submit" onClick={handleSubmit}>Submit</Submit>
                 <Cancel onClick={()=>{setModalOpen(false)}}>Cancel</Cancel>
             </Controls>
         </Form>

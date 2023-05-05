@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Details from './pages/Details'
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
           <Route path="/details/:id" element={<Details shows={shows} />} />
         </Routes>
       </Router>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   );
 }
