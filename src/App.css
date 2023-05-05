@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;600;700&family=Krona+One&family=Montserrat&family=Playfair+Display&family=Poppins:ital,wght@0,200;0,300;0,400;0,600;1,100&family=Roboto&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+a{
+  text-decoration: none;
+  color: aliceblue;
+}
+
